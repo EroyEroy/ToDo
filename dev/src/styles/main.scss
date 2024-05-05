@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('./normalize.scss');
+
+:root {
+    --accent: #24f29c;
+    --second: #111;
+    --third: #fff;
+}
+
+// настройка для прижатия footer к низу страницы
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+// стили container
+.container {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+body {
+    background-color: var(--second);
+    color: var(--accent);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 32px;
+}
+
+// стилизация секции todos
+.todos {
+    &__inner {
+        padding: 100px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 500px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__input {
+        width: 100%;
+    }
+}
+
+.button {
+    background-color: var(--accent);
+    color: var(--third);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid var(--accent);
+    transition: all .2s linear;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--accent);
+    }
+}
+
+// стилизация текстового поля
+.myInput {
+    input {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        width: inherit;
+
+        &::placeholder {
+            color: inherit;
+        }
+    }
+}
+
+// стилизация чекбокса
+.myCheckbox {
+    position: relative;
+
+    input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+
+        &:checked {
+            &+.myCheckbox__checkbox {
+                background-color: var(--accent);
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+            }
+        }
+    }
+
+    &__checkbox {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        border: 1px solid var(--accent);
+    }
+}
